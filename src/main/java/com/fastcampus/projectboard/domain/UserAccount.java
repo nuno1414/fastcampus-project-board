@@ -17,6 +17,7 @@ import java.util.Objects;
 })
 @Entity
 public class UserAccount extends AuditingFields {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -28,10 +29,10 @@ public class UserAccount extends AuditingFields {
     @Setter @Column(length = 100) private String nickname;
     @Setter private String memo;
 
-
     protected UserAccount() {}
 
-    private UserAccount(String userId, String userPassword, String email, String nickname, String memo) {
+    public UserAccount(String userId, String userPassword, String email, String nickname, String memo) {
+
         this.userId = userId;
         this.userPassword = userPassword;
         this.email = email;
@@ -56,3 +57,4 @@ public class UserAccount extends AuditingFields {
     }
 
 }
+
