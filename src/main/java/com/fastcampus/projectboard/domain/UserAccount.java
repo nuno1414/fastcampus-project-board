@@ -16,7 +16,7 @@ import java.util.Objects;
         @Index(columnList = "createdBy")
 })
 @Entity
-public class UserAccount extends AuditingFields{
+public class UserAccount extends AuditingFields {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -32,6 +32,7 @@ public class UserAccount extends AuditingFields{
     protected UserAccount() {}
 
     public UserAccount(String userId, String userPassword, String email, String nickname, String memo) {
+
         this.userId = userId;
         this.userPassword = userPassword;
         this.email = email;
@@ -56,3 +57,4 @@ public class UserAccount extends AuditingFields{
     }
 
 }
+
